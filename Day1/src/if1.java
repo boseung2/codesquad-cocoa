@@ -12,6 +12,6 @@ public class if1 {
         if( a < b)
             System.out.println("<");
         if( a == b)
-            System.out.println("<");
+            System.out.println("==");
     }
 }

@@ -10,24 +10,24 @@ public class if5 {
         if(h != 0){
             if(m >= 45){
                 m = m-45;
-                System.out.println(h + "  " + m);
+                System.out.println(h + " " + m);
             }
             else if(m < 45){
                 h = h - 1;
                 m = m + 15;
-                System.out.println(h + "  " + m);
+                System.out.println(h + " " + m);
             }
         }
 
-        if( h == 0){
+        else if( h == 0){
             if(m >= 45){
                 m = m-45;
-                System.out.println(h + "  " + m);
+                System.out.println(h + " " + m);
             }
             else if(m < 45){
                 h = 23;
                 m = m+15;
-                System.out.println(h + "  " + m);
+                System.out.println(h + " " + m);
             }
         }
 
