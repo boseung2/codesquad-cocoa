@@ -165,9 +165,25 @@ class Map{
 
 public class SimpleRpgGame {
 
+    static void makeMonster(Character character, Bomb bomb, Monster monster) {
+        Random random = new Random();
+
+        while (true) {
+            int x = random.nextInt(10);
+            int y = random.nextInt(10);
+            if (x != character.getX() || y != character.getY()) {
+                if (x != bomb.getX() || y != bomb.getY()) {
+                    monster.setX(x);
+                    monster.setY(y);
+                    Map.array[monster.getX()][monster.getY()] = " 🐖 ";
+                    break;
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
 
         Map map = new Map();                     //맵 생성 및 초기화
         Character character = new Character(5, 5);  //캐릭터 생성 및 초기화
@@ -175,19 +191,8 @@ public class SimpleRpgGame {
         Monster monster = new Monster();         //몬스터 인터페이스 생성
         int score = 0;                           //점수생성
 
-        //첫번째 몬스터생성
-        while (true) {
-            int x = random.nextInt(10);
-            int y = random.nextInt(10);
-            if (x != character.getX() || y != monster.getX()) {
-                if (x != bomb.getX() || y != bomb.getY()) {
-                    monster.setX(x);
-                    monster.setY(y);
-                    Map.array[ monster.getX() ][ monster.getY() ] = " 🐖 ";
-                    break;
-                }
-            }
-        }
+        // 초기 몬스터생성
+        makeMonster(character, bomb, monster);
 
         //초기 배열 출력
         System.out.println("    🐖🐖🐖🐖🐖돼지RPG🐖🐖🐖🐖🐖");
@@ -196,7 +201,7 @@ public class SimpleRpgGame {
 
         //폭탄밟기전까지 무한반복
         while (true) {
-            //문자열 입력받아서 캐릭터 이동
+            //문자열 입력받아서 wasd해당할시 캐릭터 이동
             String inputKey = new String();
             while(true) {
                 inputKey = scanner.next();
@@ -223,19 +228,8 @@ public class SimpleRpgGame {
                 System.out.println("돼지를 잡았습니다. 현재점수 : " + score + "점");
                 System.out.println();
                 //몬스터 재생성
-                while (true) {
-                    int x = random.nextInt(10);
-                    int y = random.nextInt(10);
-                    if (x != character.getX() || y != monster.getX()) {
-                        if (x != bomb.getX() || y != bomb.getY()) {
-                            monster.setX(x);
-                            monster.setY(y);
-                            Map.array[ monster.getX() ][ monster.getY() ] = " 🐖 ";
-                            map.print();
-                            break;
-                        }
-                    }
-                }
+                makeMonster(character, bomb, monster);
+                map.print();
             }
 
 
