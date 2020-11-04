@@ -2,11 +2,12 @@ import java.util.Scanner;
 
 public class IndianNaming {
 
-    static void printWord(String[] wordArray, int calendarNum){
+    static String searchWord(String[] wordArray, int calendarNum){
         for(int i = 0; i < wordArray.length; i++){
             if(calendarNum % wordArray.length == i)
-                System.out.print(wordArray[i]);
+                return wordArray[i];
         }
+        return null;
     }
 
     static void printAll(int year, int month, int day){
@@ -17,9 +18,9 @@ public class IndianNaming {
                 "이(가) 노래하다", "의 그림자", "의 일격", "에게 쫓기는 남자", "의 행진", "의 왕", "의 유령", "을 죽인자", "는 맨날 잠잔다", "처럼",
                 "의 고향", "의 전사", "은(는) 나의 친구", "의 노래", "의 정령", "의 파수꾼", "의 악마", "와 같은 사나이", "를 쓰러린 자", "의 혼", "은(는) 말이 없다"};
 
-        printWord(yearWord , year);
-        printWord(monthWord, month - 1);
-        printWord(dayWord, day - 1);
+        System.out.print( searchWord(yearWord , year) );
+        System.out.print( searchWord(monthWord, month - 1) );
+        System.out.print( searchWord(dayWord, day - 1) );
 
     }
 
