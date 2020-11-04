@@ -9,7 +9,7 @@ class Character {
     Character(int x, int y) {
         this.x = x;
         this.y = y;
-        Map.array[x][y]  = " 🧍 ";
+        Map.array[x][y] = " 🧍 ";
     }
 
     int getX() {
@@ -28,6 +28,19 @@ class Character {
         this.y = y;
     }
 
+    boolean checkInputKey(String inputKey) {
+        if (inputKey.equals("w") || inputKey.equals("W") ||
+            inputKey.equals("a") || inputKey.equals("A") ||
+            inputKey.equals("s") || inputKey.equals("S") ||
+            inputKey.equals("d") || inputKey.equals("D")  ) {
+            return true;
+        }else {
+            System.out.println("잘못 입력하셨습니다. wasd중 입력해주세요.");
+            return false;
+        }
+    }
+
+
     void move(String inputKey) {
 
             Map.array[this.x][this.y] = "   ";
@@ -44,6 +57,15 @@ class Character {
                 this.y++;
             }
             Map.array[this.x][this.y] = " 🧍 ";
+    }
+
+    boolean checkOverLine(int x, int y){
+        if(x > 10 || y > 10){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
 
@@ -175,11 +197,15 @@ public class SimpleRpgGame {
         //폭탄밟기전까지 무한반복
         while (true) {
             //문자열 입력받아서 캐릭터 이동
-            String inputKey = scanner.next();
+            String inputKey = new String();
+            while(true) {
+                inputKey = scanner.next();
+                if(character.checkInputKey(inputKey) == true) break;
+            }
             character.move(inputKey);
             map.print();
 
-            //사람이 폭탄만났을데 게임오버
+            //캐릭터가 폭탄만났을데 게임오버
             if (character.getX() == bomb.getX() && character.getY() == bomb.getY()){
                 Map.array[ character.getX() ][ character.getY() ] = " 💥 ";
                 map.print();
