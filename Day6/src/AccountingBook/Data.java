@@ -37,7 +37,7 @@ public class Data {
         return false;
     }
 
-    public Data(){
+    public Data() {
 
     }
 
@@ -47,15 +47,12 @@ public class Data {
         this.expense = expense;
     }
 
-    public void print(){
+    public void print() {
         System.out.println("적요 : " + getSummary());
         System.out.println("수입 : " + getIncome());
         System.out.println("지출 : " + getExpense());
         System.out.println("==================");
     }
-
-
-
 
 
 }

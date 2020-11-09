@@ -21,7 +21,7 @@ public class Prompt4 {
         return true;
     }
 
-    public void print(Data[][] dataArr){
+    public void print(Data[][] dataArr) {
         int[] sumMonthIncome = new int[MONTH];
         int[] sumMonthExpense = new int[MONTH];
         int thisMonthBalance = 0;
@@ -64,8 +64,8 @@ public class Prompt4 {
 
         //출력마지막에 해당월의 총 수입,지출,잔액 표시
         System.out.println();
-        System.out.println((month) + "월의 총 수입 : " + sumMonthIncome[month-1]);
-        System.out.println((month) + "월의 총 지출 : " + sumMonthExpense[month-1]);
+        System.out.println((month) + "월의 총 수입 : " + sumMonthIncome[month - 1]);
+        System.out.println((month) + "월의 총 지출 : " + sumMonthExpense[month - 1]);
         System.out.println((month) + "월 현재 남은 잔액 : " + thisMonthBalance);
         System.out.println();
     }

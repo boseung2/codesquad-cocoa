@@ -3,7 +3,7 @@ package AccountingBook;
 import java.util.Scanner;
 
 public class PromptStart {
-    public void print(){
+    public void print() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("사용자 이름을 입력해주세요 : ");
