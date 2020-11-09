@@ -24,12 +24,6 @@ public class Data {
         this.expense = expense;
     }
 
-    public void change(String summary, int income, int expense){
-        this.summary = summary;
-        this.income = income;
-        this.expense = expense;
-    }
-
     public void print(){
         System.out.println("적요 : " + getSummary());
         System.out.println("수입 : " + getIncome());
