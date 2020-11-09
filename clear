@@ -1,0 +1,205 @@
+[33mcommit 494f62b6c6fb123fcf3bbd9ae66f42900b6f072b[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Fri Nov 6 03:16:12 2020 +0900
+
+    add day4 memo
+
+[33mcommit 01419b34e5eef8a84e2f5b5572a2fd70c39be249[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Fri Nov 6 02:17:13 2020 +0900
+
+    apply gitignore
+
+[33mcommit 62efb8bd319a8aa683691c725030b2571d3fdfc3[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Thu Nov 5 06:26:02 2020 +0900
+
+    rpggame update4
+
+[33mcommit 2c944fa37bcbe8e748f91c410e93b30f332c3bb3[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Thu Nov 5 05:58:16 2020 +0900
+
+    add day3 memo
+
+[33mcommit 3564b7621b91359fa63787dc7367629e0ce47e01[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Thu Nov 5 05:48:43 2020 +0900
+
+    rpggame update3
+
+[33mcommit 14c9f22268004ec55329d742df7b551b612f99ba[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Thu Nov 5 05:12:41 2020 +0900
+
+    rpggame update2
+
+[33mcommit 934e0b4884fedd190ab16adc8382d9bf9902794d[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Wed Nov 4 16:19:23 2020 +0900
+
+    rpg game update1
+
+[33mcommit 4e08a400aa8e87c504a9919e2f66c76f9b76c8f1[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Wed Nov 4 15:15:11 2020 +0900
+
+    rpg게임 진행중
+
+[33mcommit 36d3a3a3cd3240ab162b6c299a342b7d8b7558be[m
+Merge: 8198390 f6010a5
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Wed Nov 4 12:05:15 2020 +0900
+
+    Merge branch 'main' of https://github.com/boseung2/codesquad-cocoa into main
+
+[33mcommit 8198390cb3ac1d9b900dc2eed874e2c41ba37fd1[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Wed Nov 4 12:04:25 2020 +0900
+
+    인디언게임추가
+
+[33mcommit 39fa32aa267d6d17380980b347000b6145e9d08c[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Wed Nov 4 11:39:01 2020 +0900
+
+    인디언이름짓기추가
+
+[33mcommit f6010a5c11d1de9ad8b9f7f69aa35e61fb47f65e[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Wed Nov 4 02:23:30 2020 +0900
+
+    Update README.md
+
+[33mcommit 1fd25e9111946f96b4530f973ea93b9f6d843fff[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Wed Nov 4 02:21:42 2020 +0900
+
+    Update README.md
+
+[33mcommit 5116827cb821549c31aecd7cda9f7290e32abdab[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Wed Nov 4 02:21:13 2020 +0900
+
+    Update README.md
+
+[33mcommit 926a01e053e704a2d9426bcde5aa0e09ee4477ca[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Wed Nov 4 02:20:58 2020 +0900
+
+    Update README.md
+
+[33mcommit ed9bb74dc74f868803cd68dfeb0832b595af4f1f[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Wed Nov 4 02:20:42 2020 +0900
+
+    Update README.md
+
+[33mcommit 224aeb59c9449f739c966e9086ddec917006397c[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Wed Nov 4 02:20:30 2020 +0900
+
+    Update README.md
+
+[33mcommit 75b04402061d2b1b73bf8535851ded8f078cf34f[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Wed Nov 4 02:20:17 2020 +0900
+
+    Update README.md
+
+[33mcommit 81b5a8b8eac20e5d30985c3b1148dce56a3a3258[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Wed Nov 4 02:20:08 2020 +0900
+
+    Update README.md
+
+[33mcommit 222817be9f432f17ded4678c14ba7a252b962ee8[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Wed Nov 4 02:18:13 2020 +0900
+
+    Update 2일차정리.md
+
+[33mcommit e08a8b96c29b4dffe3aa80e371e2283964c44c53[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Wed Nov 4 02:17:33 2020 +0900
+
+    Update 2일차정리.md
+
+[33mcommit a344ea8cf53e8ba8dfe4a1ca39843ace07adef8f[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Wed Nov 4 02:16:20 2020 +0900
+
+    Update 2일차정리.md
+
+[33mcommit 0e0e319dde500016163befd8938ba79790a7cc05[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Wed Nov 4 02:16:09 2020 +0900
+
+    Update 2일차정리.md
+
+[33mcommit 2afbc825dfe8375572269c23615063d30c25406d[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Wed Nov 4 02:14:33 2020 +0900
+
+    2일차정리 추가
+
+[33mcommit b2ad75386856c1e0807d60e05a701bb96bfe91fd[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Wed Nov 4 02:06:00 2020 +0900
+
+    2일차정리 추가
+
+[33mcommit 139d603086875a5b79f8b05096329038551cad44[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Wed Nov 4 01:40:38 2020 +0900
+
+    mission update4
+
+[33mcommit 8d459c5b41a073c977b3a8a7f3aaee413854ba50[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Tue Nov 3 20:11:19 2020 +0900
+
+    mission1 update 3
+
+[33mcommit 982802678b9a5d43bd9ee490c26880386b4769ee[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Tue Nov 3 17:02:46 2020 +0900
+
+    mission1 update2
+
+[33mcommit b39b3264bc8582e7392f7b9e4085f6d35deccdcd[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Tue Nov 3 09:59:30 2020 +0900
+
+    day1 update
+
+[33mcommit ee829da01a834025bfb6471b7860a60aea8eb786[m
+Merge: ea2b400 e573055
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Tue Nov 3 09:57:34 2020 +0900
+
+    Merge branch 'main' of https://github.com/boseung2/codesquad-cocoa into main
+
+[33mcommit ea2b400f99d466545129040324da9ac968e74874[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Tue Nov 3 09:56:04 2020 +0900
+
+    day1 update
+
+[33mcommit e5730551a35663955e8ba97213a02272319b4f91[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Tue Nov 3 02:26:49 2020 +0900
+
+    Update README.md
+
+[33mcommit 8b9d20ccad660a13367bd4afd805cdbf2a84fcfa[m
+Author: boseung2 <jungbs3726@gmail.com>
+Date:   Tue Nov 3 02:17:29 2020 +0900
+
+    day1 commit
+
+[33mcommit 78cc5fc3b844986f1b83b0f08e7efb9a4551b364[m
+Author: boseung <70413698+boseung2@users.noreply.github.com>
+Date:   Tue Nov 3 02:08:36 2020 +0900
+
+    Initial commit
