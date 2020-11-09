@@ -7,8 +7,8 @@ public class Main {
     static boolean checkMonthDay(int month, int day) {
         if (month >= 1 && month <= 12 && day >= 1 && day <= 31) {
             return true;
-        } else
-            return false;
+        }
+        return false;
     }
 
     public static void main(String[] args) {
@@ -26,18 +26,20 @@ public class Main {
         String password = scanner.next();
         System.out.println();
         System.out.println(userName + "님의 가계부 입니다.");
+
         //0입력시 까지 반복
         while (true) {
             System.out.println("(1. 입력 2. 삭제 3. 수정 4. 출력 0. 종료)");
             System.out.print("원하시는 항목을 선택해주세요. : ");
             int choose = scanner.nextInt();
 
-            //(0)을 입력시 종료
+            //(0)을 입력시 프로그램 종료
             if (choose == 0) {
                 System.out.println("종료합니다.");
                 break;
             }
-            //(1)을 입력시 입력
+
+            //(1)을 입력시 데이터입력
             if (choose == 1) {
                 System.out.print("입력하실 월을 입력해주세요 : ");
                 int month = scanner.nextInt();
@@ -87,8 +89,9 @@ public class Main {
                     System.out.println("월 혹은 일을 잘못 입력하셨습니다. 처음으로 돌아갑니다.");
                     continue;
                 }
+
                 //해당 날짜의 데이터가 있는지 확인
-                if(dataArr[month - 1][day - 1] == null){
+                if (dataArr[month - 1][day - 1] == null) {
                     System.out.println("해당 날짜의 데이터가 없습니다. 처음으로 돌아갑니다.");
                     System.out.println();
                     continue;
@@ -99,9 +102,9 @@ public class Main {
                 System.out.print("수정하실 수입을 입력해주세요 : ");
                 int income = scanner.nextInt();
                 System.out.print("수정하실 지출을 입력해주세요 : ");
+                int expense = scanner.nextInt();
 
                 //해당 날짜 데이터 수정
-                int expense = scanner.nextInt();
                 dataArr[month - 1][day - 1] = new Data(summary, income, expense);
                 System.out.println("수정되었습니다.");
                 System.out.println();
@@ -109,9 +112,42 @@ public class Main {
 
             //(4)를 입력시 출력
             if (choose == 4) {
+                int[] sumMonthIncome = new int[MONTH];
+                int[] sumMonthExpense = new int[MONTH];
+
                 System.out.print("출력하실 월을 입력해주세요 : ");
                 int month = scanner.nextInt();
+                System.out.println();
+
+                //달마다 각각의 income값을 더함
+                for (int i = 0; i < MONTH; i++) {
+                    for (int j = 0; j < DAY; j++) {
+                        if (dataArr[i][j] == null) {
+                            continue;
+                        }
+                        sumMonthIncome[i] += dataArr[i][j].getIncome();
+                    }
+                }
+
+
+                //달마다 각각의 expense값을 더함
+                for (int i = 0; i < MONTH; i++) {
+                    for (int j = 0; j < DAY; j++) {
+                        if (dataArr[i][j] == null) {
+                            continue;
+                        }
+                        sumMonthExpense[i] += dataArr[i][j].getExpense();
+                    }
+                }
+
+                //해당 달까지의 (총수입 - 총지출)을 더함
+                int thisMonthBalance = 0;
+                for (int i = 0; i < month; i++) {
+                    thisMonthBalance += sumMonthIncome[i] - sumMonthExpense[i];
+                }
+
                 for (int i = 0; i < DAY; i++) {
+
                     //dataArr에 저장된 정보가 없으면 출력안함, 저장된 정보가 있으면 정보 출력
                     if (dataArr[month - 1][i] == null) {
                         continue;
@@ -120,6 +156,10 @@ public class Main {
                         dataArr[month - 1][i].print();
                     }
                 }
+                System.out.println();
+                System.out.println((month) + "월의 총 수입 : " + sumMonthIncome[month-1]);
+                System.out.println((month) + "월의 총 지출 : " + sumMonthExpense[month-1]);
+                System.out.println((month) + "월 현재 남은 잔액 : " + thisMonthBalance);
                 System.out.println();
             }
 
