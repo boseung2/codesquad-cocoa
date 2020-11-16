@@ -24,10 +24,15 @@ public class Cd {
                     Shell.currentDir = Shell.currentDir.getParentFile();
                 }
                 else {
-                    File tempDir = new File(command[1]);
-                    if (tempDir.exists()) {
-                        Shell.currentDir = tempDir;
-                    } else {
+                    File tempDir1 = new File(command[1]);
+                    File tempDir2 = new File(Shell.currentDir.getPath() + "\\" + command[1]);
+
+                    if (tempDir1.exists()) {
+                        Shell.currentDir = tempDir1;
+                    }else if (tempDir2.exists()){
+                        Shell.currentDir = tempDir2;
+                    }
+                    else {
                         System.out.println("file not found");
                     }
                 }

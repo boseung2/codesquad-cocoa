@@ -5,7 +5,6 @@ import java.io.IOException;
 
 public class Cp {
     String[] command;
-    File targetFile;
     String pathOfOriginalFile;
     String pathOfTargetFile;
 

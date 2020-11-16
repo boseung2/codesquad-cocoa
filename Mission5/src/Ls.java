@@ -2,13 +2,11 @@ import java.io.File;
 
 public class Ls {
     String[] command;
+    File[] fileList = Shell.currentDir.listFiles();
 
     public Ls(String[] command) {
         this.command = command;
     }
-
-    File[] fileList = Shell.currentDir.listFiles();
-
 
     void run() {
         for (int i = 0; i < fileList.length; i++) {
