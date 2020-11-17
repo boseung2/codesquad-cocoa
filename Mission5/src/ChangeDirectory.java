@@ -1,11 +1,10 @@
 import java.io.File;
 
-public class Cd {
+public class ChangeDirectory {
 
-    String[] command;
-    //File tempDir = new File(command[1]);
+    private String[] command;
 
-    public Cd(String[] command) {
+    public ChangeDirectory(String[] command) {
         this.command = command;
     }
 
@@ -37,11 +36,11 @@ public class Cd {
                     }
                 }
             }
-        }catch(NullPointerException e){}
+        }catch(NullPointerException e){
+
+        }
 
     }
-
-
 
 }
 

@@ -4,13 +4,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 //고쳐야함
-public class Mv {
+public class Move {
     String[] command;
     String pathOfOriginalFile;
     String pathOfTargetFile;
     File tempFile;
 
-    public Mv(String[] command) {
+    public Move(String[] command) {
         this.command = command;
     }
 

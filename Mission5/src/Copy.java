@@ -3,14 +3,14 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class Cp {
-    String[] command;
-    String pathOfOriginalFile;
-    String pathOfTargetFile;
+public class Copy {
+    private String[] command;
+    private String pathOfOriginalFile;
+    private String pathOfTargetFile;
 
 
 
-    public Cp(String[] command) {
+    public Copy(String[] command) {
         this.command = command;
     }
 

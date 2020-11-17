@@ -17,8 +17,8 @@ public class Shell {
             String[] command = input.split(" ");
 
             if(command[0].equals("ls")){
-                Ls ls = new Ls(command);
-                ls.run();
+                List list = new List(command);
+                list.run();
             }
 
             if(command[0].equals("pwd")){
@@ -27,17 +27,17 @@ public class Shell {
             }
 
             if(command[0].equals("cd")){
-                Cd cd = new Cd(command);
+                ChangeDirectory cd = new ChangeDirectory(command);
                 cd.run();
             }
 
             if(command[0].equals("cp")){
-                Cp cp = new Cp(command);
+                Copy cp = new Copy(command);
                 cp.run();
             }
 
             if(command[0].equals("mv")){
-                Mv mv = new Mv(command);
+                Move mv = new Move(command);
                 mv.run();
             }
 

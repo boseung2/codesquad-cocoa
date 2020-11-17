@@ -1,10 +1,10 @@
 import java.io.File;
 
-public class Ls {
-    String[] command;
-    File[] fileList = Shell.currentDir.listFiles();
+public class List {
+    private String[] command;
+    private File[] fileList = Shell.currentDir.listFiles();
 
-    public Ls(String[] command) {
+    public List(String[] command) {
         this.command = command;
     }
 
