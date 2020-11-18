@@ -1,9 +1,9 @@
 import java.io.File;
 
-public class ChangeDirectory {
+public class ChangeDir {
     private String[] command;
 
-    public ChangeDirectory(String[] command) {
+    public ChangeDir(String[] command) {
         this.command = command;
     }
 
@@ -30,8 +30,8 @@ public class ChangeDirectory {
             command[1] = command[1].substring(1,command[1].length()-1);
             File tempFile = new File(command[1]);
             Shell.currentDir = checkGetFile(tempFile);
-
-        }else if(!command[1].contains("\\")){
+        }
+        else if(!command[1].contains("\\")){
             File tempFile = new File(Shell.currentDir.getPath() + File.separatorChar + command[1]);
             Shell.currentDir = checkGetFile(tempFile);
         }
