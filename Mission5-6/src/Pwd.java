@@ -12,7 +12,7 @@ public class Pwd {
     public void print(){
         if(!(command.length == 1)) {
             return;
-        }
+        } //   pwd   ->  현재 위치 프린트
         System.out.println(currentDir.getPath());
     }
 

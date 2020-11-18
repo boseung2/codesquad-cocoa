@@ -1,9 +1,6 @@
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
-//고쳐야함
 public class Move {
     private String[] command;
     private String[] tempCommand;
@@ -19,7 +16,7 @@ public class Move {
         if (!(command.length == 3)) {
             return;
         }
-        if (isFile(command, 1) && isAdress(command, 2)) {
+        if (isFile(command, 1) && isAdress(command, 2)) {       // mv 원본파일명 옮기고싶은디렉토리명 ->해당디렉토리로 파일이동
             tempCommand = new String[]{"cp ", command[1], command[2]};
             Copy cp = new Copy(tempCommand, currentDir);
             cp.run();
@@ -27,7 +24,7 @@ public class Move {
             Remove rm = new Remove(tempCommand, currentDir);
             rm.run();
         }
-        if (isFile(command, 1) && isFile(command, 2)) {
+        if (isFile(command, 1) && isFile(command, 2)) {         // mv 원본파일명 바꾸고싶은파일명  -> 원본파일이름변경
             String originalFile = currentDir.getPath() + File.separatorChar + command[1];
             String targetFile = currentDir.getPath() + File.separatorChar + command[2];
             renameFile(originalFile, targetFile);

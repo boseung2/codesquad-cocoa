@@ -10,7 +10,7 @@ public class Touch {
         this.currentDir = currentDir;
     }
 
-    public void run() throws IOException {
+    public void run() throws IOException {      // touch 파일명   -> 파일생성
         if(!(command.length == 2)){
             return;
         }

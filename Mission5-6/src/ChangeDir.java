@@ -18,20 +18,20 @@ public class ChangeDir {
             return Shell.ADMIN_DIR;
         }
 
-        if (command[1].equals("/")) { //command 단어개수 2개일때부터
+        if (command[1].equals("/")) {   // cd /   -> root디렉토리이동(c:\)
             return Shell.ROOT_DIR;
         }
 
-        if (command[1].equals("..")){
+        if (command[1].equals("..")){   // cd ..   -> 상위디렉토리로 이동
             return checkGetParentFile(currentDir);
         }
 
-        if(isAdress(command, 1)){
+        if(isAdress(command, 1)){     // cd "---"  -> 해당경로로 이동
             command[1] = command[1].substring(1,command[1].length()-1);
             return checkGetFile(new File(command[1]));
         }
 
-        else if(!command[1].contains("\\")){
+        else if(!command[1].contains("\\")){    // cd 하위디렉토리명   -> 해당디렉토리로 이동
             return checkGetFile(new File(currentDir.getPath() + File.separatorChar + command[1]));
         }
 

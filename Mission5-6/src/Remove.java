@@ -17,15 +17,15 @@ public class Remove {
             return;
         }
 
-        if (command.length == 2 && command[1].equals("*")) {
+        if (command.length == 2 && command[1].equals("*")) {    // rm *   -> 해당디렉토리 전체파일 삭제
             delete(currentDir.listFiles());
         }
-        if (command.length == 2 && command[1].contains("*.")) {
+        if (command.length == 2 && command[1].contains("*.")) {     // rm *.txt   ->  .txt로 끝나는 모든 파일 삭제
             String extension = command[1].substring(1);
             files = currentDir.listFiles((dir, name) -> name.endsWith(extension));
             delete(files);
         }
-        if (command.length == 2) {
+        if (command.length == 2) {      // rm 파일명   -> 해당파일삭제
             delete(new File(currentDir.getPath() + File.separator + command[1]));
         }
 

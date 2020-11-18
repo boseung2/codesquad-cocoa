@@ -17,13 +17,13 @@ public class Copy {
             return;
         }
 
-        if (command.length == 3 && !isAdress(command, 2)) {
+        if (command.length == 3 && !isAdress(command, 2)) { // cp 원본파일명 옮길디렉토리명  -> 해당디렉토리로 원본파일복사
             File originalFile = new File(currentDir.getPath() + File.separatorChar + command[1]);
             File targetFile = new File(currentDir.getPath() + File.separator + command[2]);
             copyOriginalFile(originalFile, targetFile);
         }
 
-        if (command.length == 3 && isAdress(command, 2)) {
+        if (command.length == 3 && isAdress(command, 2)) {  // cp 원본파일명 복사해서만들고싶은파일명  -> 만들고싶은파일명으로 사본생성
             command[2] = command[2].substring(1, command[2].length() - 1);
             File originalFile = new File(currentDir.getPath() + File.separatorChar + command[1]);
             File targetFile = new File(command[2] + File.separator + command[1]);

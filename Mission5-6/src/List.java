@@ -11,7 +11,7 @@ public class List {
     public void print() {
         if(command.length != 1){
             return;
-        }
+        }       // 현재디렉토리 리스트전부 출력(파일은 파일이름 디렉토리는 뒤에 "/"붙음
         File[] files = currentDir.listFiles();
         printList(files);
     }
