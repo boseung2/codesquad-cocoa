@@ -3,17 +3,9 @@ import java.util.Scanner;
 
 public class Shell {
     Scanner scanner = new Scanner(System.in);
-    final public static File ROOT_DIR = new File(File.pathSeparator);
+    final public static File ROOT_DIR = new File("c:\\");
     final public static File ADMIN_DIR = new File("c:\\users\\admin");
     public static File currentDir = ADMIN_DIR;
-
-    public File getCurrentDir() {
-        return currentDir;
-    }
-
-    public void setCurrentDir(File currentDir) {
-        this.currentDir = currentDir;
-    }
 
     public void start(){
 
