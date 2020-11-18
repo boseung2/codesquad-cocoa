@@ -17,6 +17,7 @@ public class Touch {
         create(new File(currentDir + File.separator + command[1]));
     }
 
+
     private void create(File tempFile) throws IOException {
         if(tempFile.exists()){
             System.out.println("file already exists");

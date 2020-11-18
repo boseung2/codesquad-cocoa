@@ -5,54 +5,65 @@ import java.io.IOException;
 
 //고쳐야함
 public class Move {
-    String[] command;
-    File currentDir;
-    String pathOfOriginalFile;
-    String pathOfTargetFile;
-    File tempFile;
+    private String[] command;
+    private String[] tempCommand;
+    private File currentDir;
 
-    public Move(String[] command) {
+    public Move(String[] command, File currentDir) {
         this.command = command;
         this.currentDir = currentDir;
     }
 
+
     void run() throws IOException {
-        if(command.length == 3){
-            pathOfOriginalFile = currentDir.getPath() + "\\" + command[1];
-            pathOfTargetFile = currentDir.getPath() + "\\" + command[2];
-            File originalFile = new File(pathOfOriginalFile);
-            File targetFile = new File(pathOfTargetFile);
+        if (!(command.length == 3)) {
+            return;
+        }
+        if (isFile(command, 1) && isAdress(command, 2)) {
+            tempCommand = new String[]{"cp ", command[1], command[2]};
+            Copy cp = new Copy(tempCommand, currentDir);
+            cp.run();
+            tempCommand = new String[]{"rm ", command[1]};
+            Remove rm = new Remove(tempCommand, currentDir);
+            rm.run();
+        }
+        if (isFile(command, 1) && isFile(command, 2)) {
+            String originalFile = currentDir.getPath() + File.separatorChar + command[1];
+            String targetFile = currentDir.getPath() + File.separatorChar + command[2];
+            renameFile(originalFile, targetFile);
+        }
+        // 1. mv 원본디렉토리 옮기고싶은디렉토리
+        // 2. mv 원본디렉토리 바꾸고싶은디렉토리
+        if (isAdress(command, 2) && isAdress(command, 2)) {
 
-            if(originalFile.isFile() && originalFile.exists()){
+        }
 
-                if(targetFile.isDirectory()){
-                    targetFile = new File(pathOfTargetFile + "\\" + command[1]);
-                    targetFile.createNewFile();
 
-                    FileInputStream fis = new FileInputStream(originalFile);
-                    FileOutputStream fos = new FileOutputStream(targetFile);
+    }
 
-                    int data = 0;
-                    while ((data = fis.read()) != -1) {
-                        fos.write(data);
-                    }
 
-                    fis.close();
-                    fos.close();
-                    originalFile.delete();
-                }
+    private boolean isAdress(String[] command, int i) {
+        if (command[i].charAt(0) == '\"' && command[i].charAt(command[i].length() - 1) == '\"') {
+            return true;
+        }
+        return false;
+    }
 
-                if(targetFile.isFile()){
+    private boolean isFile(String[] command, int i) {
+        File tempFile = new File(currentDir + File.separator + command[1]);
+        if (tempFile.isFile()) {
+            return true;
+        }
+        return false;
+    }
 
-                    tempFile = new File(pathOfOriginalFile + "command[2]");
-                    boolean success = tempFile.renameTo(new File(pathOfOriginalFile + command[2]));
-                    if (!success) {
-                        System.out.println("Failed to rename to " + pathOfOriginalFile + command[2]);
-                    }
-
-                }
-
-            }
+    public void renameFile(String filename, String newFilename) {
+        File file = new File(filename);
+        File fileNew = new File(newFilename);
+        if (file.exists()) {
+            file.renameTo(fileNew);
         }
     }
+
+
 }

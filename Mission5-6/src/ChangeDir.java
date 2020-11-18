@@ -18,7 +18,7 @@ public class ChangeDir {
             return Shell.ADMIN_DIR;
         }
 
-        if (command[1].equals("/")) { //command 단어개수 2개일때
+        if (command[1].equals("/")) { //command 단어개수 2개일때부터
             return Shell.ROOT_DIR;
         }
 

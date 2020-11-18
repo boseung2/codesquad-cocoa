@@ -57,10 +57,10 @@ public class Shell {
                 cp.run();
             }
 
-//            if(mainCommand.equals("mv")){
-//                Move mv = new Move(command);
-//                mv.run();
-//            }
+            if(mainCommand.equals("mv")){
+                Move mv = new Move(command, getCurrentDir());
+                mv.run();
+            }
 
         }
     }

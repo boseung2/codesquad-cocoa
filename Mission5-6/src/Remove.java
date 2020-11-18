@@ -39,6 +39,7 @@ public class Remove {
 
     }
 
+
     private void delete(File[] files) {
         for (int i = 0; i < files.length; i++) {
             files[i].delete();
