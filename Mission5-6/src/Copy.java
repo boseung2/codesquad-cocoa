@@ -5,46 +5,69 @@ import java.io.IOException;
 
 public class Copy {
     private String[] command;
-    private String pathOfOriginalFile;
-    private String pathOfTargetFile;
+    private File currentDir;
 
-
-
-    public Copy(String[] command) {
+    public Copy(String[] command, File currentDir) {
         this.command = command;
+        this.currentDir = currentDir;
     }
 
-    public void run(){
+    public void run() throws IOException {
         if(command.length <= 2 || command.length>=5){   //command단어개수 최소 3개~4개 가능
             return;
         }
 
+        if(command.length == 3 && !isAdress(command, 2)){
+            File originalFile = new File(currentDir.getPath() + File.separatorChar + command[1]);
+            File targetFile = new File(currentDir.getPath() + File.separator + command[2]);
+            copyOriginalFile(originalFile, targetFile);
+        }
+
+        if(command.length == 3 && isAdress(command, 2)){
+            command[2] = command[2].substring(1,command[2].length()-1);
+            File originalFile = new File(currentDir.getPath() + File.separatorChar + command[1]);
+            File targetFile = new File(command[2] + File.separator + command[1]);
+            copyOriginalFile(originalFile, targetFile);
+        }
+
+
+
 
     }
 
+    private void copyOriginalFile(File originalFile, File targetFile) throws IOException {
+        if(!originalFile.exists()) {
+            System.out.println("can't find file");
+            return;
+        }
+        if(targetFile.exists()){
+            System.out.println("file already exists");
+            return;
+        }
+        if(!targetFile.getParentFile().exists()){
+            System.out.println("can't find directory");
+            return;
+        }
+        targetFile.createNewFile();
 
-//        if(command.length == 3){
-//            pathOfOriginalFile = Shell.currentDir.getPath() + "\\" + command[1];
-//            pathOfTargetFile = Shell.currentDir.getPath() + "\\" + command[2];
-//            File originalFile = new File(pathOfOriginalFile);
-//            File targetFile = new File(pathOfTargetFile);
-//
-//            if(originalFile.exists()) {
-//                targetFile.createNewFile();
-//
-//                FileInputStream fis = new FileInputStream(originalFile);
-//                FileOutputStream fos = new FileOutputStream(targetFile);
-//
-//                int data = 0;
-//                while ((data = fis.read()) != -1) {
-//                    fos.write(data);
-//                }
-//
-//                fis.close();
-//                fos.close();
-//            }
-//
-//        }
+        FileInputStream fis = new FileInputStream(originalFile);
+        FileOutputStream fos = new FileOutputStream(targetFile);
+
+        int data = 0;
+        while ((data = fis.read()) != -1) {
+            fos.write(data);
+        }
+
+        fis.close();
+        fos.close();
+    }
+
+    private boolean isAdress(String[] command, int i){
+        if(command[i].charAt(0) == '\"' && command[i].charAt(command[i].length()-1) == '\"'){
+            return true;
+        }
+        return false;
+    }
 
 
 }

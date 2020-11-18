@@ -2,10 +2,11 @@ import java.io.File;
 
 public class MakeDir {
     private String[] command;
-    private File tempFile;
+    private File currentDir;
 
-    public MakeDir(String[] command) {
+    public MakeDir(String[] command, File currentDir) {
         this.command = command;
+        this.currentDir = currentDir;
     }
 
     public void run(){
@@ -14,18 +15,16 @@ public class MakeDir {
         }
 
         if(command.length == 2){
-            tempFile = new File(Shell.currentDir + File.separator + command[1]);
-            make(tempFile);
+            make(new File(currentDir + File.separator + command[1]));
         }
 
         if(command.length == 3 && command[1].equals("-p")){
-            tempFile = new File(Shell.currentDir + File.separator + command[2]);
-            make(tempFile);
+            make(new File(currentDir + File.separator + command[2]));
         }
 
     }
 
-    public void make(File tempFile){
+    private void make(File tempFile){
         if(tempFile.isDirectory()){
             System.out.println("directory already exists");
             return;

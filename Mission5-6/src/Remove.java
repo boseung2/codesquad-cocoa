@@ -4,11 +4,12 @@ import java.nio.file.Paths;
 
 public class Remove {
     private String[] command;
-    public File[] fileList;
-    public File tempFile;
+    private File currentDir;
+    public File[] files;
 
-    public Remove(String[] command) {
+    public Remove(String[] command, File currentDir) {
         this.command = command;
+        this.currentDir = currentDir;
     }
 
     public void run() {
@@ -17,22 +18,15 @@ public class Remove {
         }
 
         if (command.length == 2 && command[1].equals("*")) {
-            fileList = Shell.currentDir.listFiles();
-            delete(fileList);
+            delete(currentDir.listFiles());
         }
         if (command.length == 2 && command[1].contains("*.")) {
             String extension = command[1].substring(1);
-            fileList = Shell.currentDir.listFiles(new FilenameFilter() {
-                @Override
-                public boolean accept(File dir, String name) {
-                    return name.endsWith(extension);
-                }
-            });
-            delete(fileList);
+            files = currentDir.listFiles((dir, name) -> name.endsWith(extension));
+            delete(files);
         }
         if (command.length == 2) {
-            tempFile = new File(Shell.currentDir.getPath() + File.separator + command[1]);
-            delete(tempFile);
+            delete(new File(currentDir.getPath() + File.separator + command[1]));
         }
 
         // rm -r 이후 명령어 구현해야함
@@ -45,9 +39,9 @@ public class Remove {
 
     }
 
-    private void delete(File[] fileList) {
-        for (int i = 0; i < fileList.length; i++) {
-            fileList[i].delete();
+    private void delete(File[] files) {
+        for (int i = 0; i < files.length; i++) {
+            files[i].delete();
         }
     }
 

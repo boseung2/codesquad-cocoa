@@ -3,19 +3,18 @@ import java.io.IOException;
 
 public class Touch {
     private String[] command;
-    private File tempFile;
+    private File currentDir;
 
-    public Touch(String[] command) {
+    public Touch(String[] command, File currentDir) {
         this.command = command;
+        this.currentDir = currentDir;
     }
 
     public void run() throws IOException {
         if(!(command.length == 2)){
             return;
         }
-
-        tempFile = new File(Shell.currentDir + File.separator + command[1]);
-        create(tempFile);
+        create(new File(currentDir + File.separator + command[1]));
     }
 
     private void create(File tempFile) throws IOException {

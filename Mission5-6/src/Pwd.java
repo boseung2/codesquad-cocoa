@@ -1,15 +1,19 @@
-public class Pwd {
-    String[] command;
+import java.io.File;
 
-    public Pwd(String[] command) {
+public class Pwd {
+    private String[] command;
+    private File currentDir;
+
+    public Pwd(String[] command, File currentDir) {
         this.command = command;
+        this.currentDir = currentDir;
     }
 
-    void run(){
+    public void print(){
         if(!(command.length == 1)) {
             return;
         }
-        System.out.println(Shell.currentDir.getPath());
+        System.out.println(currentDir.getPath());
     }
 
 }

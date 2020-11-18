@@ -6,18 +6,20 @@ import java.io.IOException;
 //고쳐야함
 public class Move {
     String[] command;
+    File currentDir;
     String pathOfOriginalFile;
     String pathOfTargetFile;
     File tempFile;
 
     public Move(String[] command) {
         this.command = command;
+        this.currentDir = currentDir;
     }
 
     void run() throws IOException {
         if(command.length == 3){
-            pathOfOriginalFile = Shell.currentDir.getPath() + "\\" + command[1];
-            pathOfTargetFile = Shell.currentDir.getPath() + "\\" + command[2];
+            pathOfOriginalFile = currentDir.getPath() + "\\" + command[1];
+            pathOfTargetFile = currentDir.getPath() + "\\" + command[2];
             File originalFile = new File(pathOfOriginalFile);
             File targetFile = new File(pathOfTargetFile);
 

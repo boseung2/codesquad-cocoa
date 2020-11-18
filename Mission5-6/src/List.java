@@ -2,28 +2,28 @@ import java.io.File;
 
 public class List {
     private String[] command;
-    public List(String[] command) {
+    private File currentDir;
+    public List(String[] command, File currentDir) {
         this.command = command;
+        this.currentDir = currentDir;
     }
 
-
-    public void run() {
+    public void print() {
         if(command.length != 1){
             return;
         }
-
-        File[] fileList = Shell.currentDir.listFiles();
-        print(fileList);
+        File[] files = currentDir.listFiles();
+        printList(files);
     }
 
 
-    private void print(File[] fileList){
-        for (int i = 0; i < fileList.length; i++) {
-            String fileName = fileList[i].getName();
-            if (fileList[i].isFile()) {
+    private void printList(File[] files){
+        for (int i = 0; i < files.length; i++) {
+            String fileName = files[i].getName();
+            if (files[i].isFile()) {
                 System.out.println(fileName);
             }
-            if (fileList[i].isDirectory()) {
+            if (files[i].isDirectory()) {
                 System.out.println(fileName + File.separatorChar);
             }
         }
