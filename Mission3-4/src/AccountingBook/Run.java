@@ -2,12 +2,12 @@ package AccountingBook;
 
 public class Run {
     public static void main(String[] args) {
-        PromptStart promptStart = new PromptStart();
-        PromptChoose promptChoose = new PromptChoose();
-        Prompt1 prompt1 = new Prompt1();
-        Prompt2 prompt2 = new Prompt2();
-        Prompt3 prompt3 = new Prompt3();
-        Prompt4 prompt4 = new Prompt4();
+        LoadingUser promptStart = new LoadingUser();
+        ChooseMenu promptChoose = new ChooseMenu();
+        Save save = new Save();
+        Delete delete = new Delete();
+        Change change = new Change();
+        Print print = new Print();
 
         final int MONTH = 12;
         final int DAY = 31;
@@ -29,26 +29,26 @@ public class Run {
                 break;
             }
             if (promptChoose.getNum() == 1) {   //num = 1 데이터 입력
-                if (prompt1.input() == true) {
-                    prompt1.save(dataArr);
+                if (save.input() == true) {
+                    save.save(dataArr);
                 }
                 continue;
             }
             if (promptChoose.getNum() == 2) {   //num = 2 데이터 삭제
-                if (prompt2.input() == true) {
-                    prompt2.delete(dataArr);
+                if (delete.input() == true) {
+                    delete.delete(dataArr);
                 }
                 continue;
             }
             if (promptChoose.getNum() == 3) {   //num = 3 데이터 수정
-                if (prompt3.input(dataArr) == true) {
-                    prompt3.change(dataArr);
+                if (change.input(dataArr) == true) {
+                    change.change(dataArr);
                 }
                 continue;
             }
             if (promptChoose.getNum() == 4) {   //num = 4 데이터 출력
-                if (prompt4.input() == true) {
-                    prompt4.print(dataArr);
+                if (print.input() == true) {
+                    print.print(dataArr);
                 }
                 continue;
             }

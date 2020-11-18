@@ -6,8 +6,10 @@ public class Pwd {
     }
 
     void run(){
-        if(command.length == 1) {
-            System.out.println(Shell.currentDir.getPath());
+        if(!(command.length == 1)) {
+            return;
         }
+        System.out.println(Shell.currentDir.getPath());
     }
+
 }

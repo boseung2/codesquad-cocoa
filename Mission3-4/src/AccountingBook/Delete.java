@@ -2,7 +2,7 @@ package AccountingBook;
 
 import java.util.Scanner;
 
-public class Prompt2 {
+public class Delete {
     Data data = new Data();
     int month;
     int day;

@@ -2,7 +2,7 @@ package AccountingBook;
 
 import java.util.Scanner;
 
-public class PromptStart {
+public class LoadingUser {
     public void print() {
         Scanner scanner = new Scanner(System.in);
 

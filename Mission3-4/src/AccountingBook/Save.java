@@ -2,7 +2,7 @@ package AccountingBook;
 
 import java.util.Scanner;
 
-public class Prompt1 {
+public class Save {
     Data data = new Data();
     int month;
     int day;

@@ -2,7 +2,7 @@ package AccountingBook;
 
 import java.util.Scanner;
 
-public class PromptChoose {
+public class ChooseMenu {
     private int num;
 
     public boolean input() {
