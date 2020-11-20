@@ -3,6 +3,7 @@ import java.io.File;
 public class List {
     private String[] command;
     private File currentDir;
+
     public List(String[] command, File currentDir) {
         this.command = command;
         this.currentDir = currentDir;

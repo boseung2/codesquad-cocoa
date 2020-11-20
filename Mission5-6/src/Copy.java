@@ -30,7 +30,7 @@ public class Copy {
             copyOriginalFile(originalFile, targetFile);
         }
 
-        //cp -r 명령어들 추가해야함
+        //cp -r 명령어들 추가 예정
         if (command.length == 4 && command[2].equals("-r")) {
 
         }
@@ -39,7 +39,7 @@ public class Copy {
     }
 
     private void copyOriginalFile(File originalFile, File targetFile) throws IOException {
-        if(printErrorMessage(originalFile, targetFile)){
+        if(hasError(originalFile, targetFile)){
             return;
         }
         targetFile.createNewFile();
@@ -56,7 +56,7 @@ public class Copy {
         fos.close();
     }
 
-    private boolean printErrorMessage(File originalFile, File targetFile){
+    private boolean hasError(File originalFile, File targetFile){
         if (!originalFile.exists()) {
             System.out.println("can't find file");
             return true;
