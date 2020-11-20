@@ -65,17 +65,11 @@ public class Shell {
         }
     }
 
+
     private String[] inputCommandOneLine() {
         System.out.print("Java Shell>");
         String input = scanner.nextLine();
         return input.split(" ");
     }
-
-    private void clear() {
-        for (int i = 0; i < 100; i++) {
-            System.out.println();
-        }
-    }
-
 
 }

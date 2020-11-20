@@ -31,7 +31,7 @@ public class ChangeDir {
             return checkGetFile(new File(command[1]));
         }
 
-        else if(!command[1].contains("\\")){    // cd 하위디렉토리명   -> 해당디렉토리로 이동
+        else if(!command[1].contains("\\")){    // cd 디렉토리명   -> 해당디렉토리로 이동
             return checkGetFile(new File(currentDir.getPath() + File.separatorChar + command[1]));
         }
 

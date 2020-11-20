@@ -14,7 +14,7 @@ public class MakeDir {
             return;
         }
 
-        if(command.length == 2){        // mkdir 새로운디렉토리명  -> 해당 경로에 새로운 디렉토리를 만듦
+        if(command.length == 2){        // mkdir 새로운디렉토리명  -> 현재 경로에 새로운 디렉토리를 만듦
             make(new File(currentDir + File.separator + command[1]));
         }
 

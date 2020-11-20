@@ -17,7 +17,7 @@ public class Remove {
             return;
         }
 
-        if (command.length == 2 && command[1].equals("*")) {    // rm *   -> 해당디렉토리 전체파일 삭제
+        if (command.length == 2 && command[1].equals("*")) {    // rm *   -> 해당디렉토리 전체파일 삭제 (하위디렉토리가 있으면 하위디렉토리까지 삭제하는것추가해야함)
             delete(currentDir.listFiles());
         }
         if (command.length == 2 && command[1].contains("*.")) {     // rm *.txt   ->  .txt로 끝나는 모든 파일 삭제
@@ -25,7 +25,7 @@ public class Remove {
             files = currentDir.listFiles((dir, name) -> name.endsWith(extension));
             delete(files);
         }
-        if (command.length == 2) {      // rm 파일명   -> 해당파일삭제
+        if (command.length == 2 && !command[1].contains("*")) {      // rm 파일명   -> 해당파일삭제
             delete(new File(currentDir.getPath() + File.separator + command[1]));
         }
 
@@ -57,4 +57,5 @@ public class Remove {
             System.out.println("file not found");
         }
     }
+
 }
